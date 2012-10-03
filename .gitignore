@@ -1,0 +1,6 @@
+target/
+lib/
+manifest.zip
+WebScriptUtils.zip
+._*
+lockwait.dat

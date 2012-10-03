@@ -1,0 +1,57 @@
+﻿<?hda version="11gR1-11.1.1.6.0-idcprod1-111219T111403" jcharset="UTF8" encoding="utf-8"?>
+@Properties LocalData
+ComponentName=WebScriptUtils
+blDateFormat=dd/MM/yyyy {H:mm[:ss] [zzz]}!tGMT+10:00
+blFieldTypes=
+classpath=$COMPONENT_DIR/lib/web-script-utils-0.1-SNAPSHOT.jar;$COMPONENT_DIR/lib/yuicompressor-2.4.6.jar;$COMPONENT_DIR/lib/jtidy-r938.jar;closure-compiler-r1810.jar
+hasPreferenceData=0
+preventAdditionalComponentDowngrade=0
+version=0.1-SNAPSHOT
+@end
+@ResultSet ResourceDefinition
+4
+type
+filename
+tables
+loadOrder
+environment
+webscriptutils_environment.cfg
+null
+10
+template
+templates/webscriptutils_templates.hda
+null
+10
+resource
+resources/webscriptutils_idoc.htm
+null
+10
+@end
+@ResultSet Filters
+4
+type
+location
+parameter
+loadOrder
+extraAfterConfigInit
+org.ucmtwine.Bootstrapper
+webscriptutils.properties
+1000
+@end
+@ResultSet MergeRules
+4
+fromTable
+toTable
+column
+loadOrder
+WebScriptUtils_Templates
+IntradocTemplates
+name
+10
+@end
+@ResultSet ClassAliases
+3
+classname
+location
+loadOrder
+@end

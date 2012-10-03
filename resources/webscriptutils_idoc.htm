@@ -1,0 +1,25 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>
+WebScriptUtils htmlIncludeOrString
+</title>
+</head>
+<body>
+
+<@dynamichtml ss_toggle_scripts@>
+	<$ addJs(HttpRelativeWebRoot & "resources/" & SSContributorSourceDir & "/sitestudio/wcm.toggle.js", "sitestudio", "1") $>
+<@end@>
+
+<@dynamichtml ss_ajax_include@>
+	<$ addJs(HttpRelativeWebRoot & "resources/sitestudio/ssajax/ssajax.js", "sitestudio", "1") $>
+<@end@>
+
+<@dynamichtml ss_contribution_mode_styles@>
+	<$ addCss(HttpRelativeWebRoot & "resources/" & SSContributorSourceDir & "/sitestudio/wcm.contributor.css", "sitestudio", "1") $>
+	<$ addCss(HttpRelativeWebRoot & "resources/" & SSContributorSourceDir & "/base/wcm.menu.css", "sitestudio", "1") $>
+	<$ addCss(HttpRelativeWebRoot & "resources/" & SSContributorSourceDir & "/custom/sitestudio/wcm.contributor.css", "sitestudio", "1") $>
+<@end@>
+
+
+</body></html>

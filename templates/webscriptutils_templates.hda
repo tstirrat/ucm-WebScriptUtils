@@ -1,0 +1,19 @@
+﻿<?hda version="10.1.3.5.1 (110524)" jcharset=UTF8 encoding=utf-8?>
+@Properties LocalData
+blFieldTypes=
+blDateFormat=dd/MM/yyyy {H:mm[:ss] [zzz]}!tGMT+10:00
+@end
+@ResultSet WebScriptUtils_Templates
+5
+name
+class
+formtype
+filename
+description
+BLANK
+Generic
+Form
+blank.htm
+Blank template for outputting combined scripts
+@end
+
