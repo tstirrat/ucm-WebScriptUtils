@@ -48,11 +48,11 @@ Similar to the javascript command
 Similar to the javascript command
 
 ### combineScripts(type, items [, compress])
+
+Render a single tag which uses the combiner to combine scripts (and compress them if the server is set to compress)
 - type: content type "text/javascript" or "text/css"
 - items: comma separated list of items e.g. ITEM_1,ITEM_A
 - compress: compress result? (if supplied, overrides environment config)
-
-Render a single tag which uses the combiner to combine scripts (and compress them if the server is set to compress)
 
 Environment Variables
 ---------------------
