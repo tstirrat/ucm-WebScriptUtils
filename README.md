@@ -11,14 +11,14 @@ Example
 Anywhere in your template you can define a number of scripts.
 
 ```html
-<!--$ addScript('JS_MAIN', 'footer', 5) -->
-<!--$ addScript('JS_OTHER', 'footer', 6) -->
+<!--$ addJs('JS_MAIN', 'footer', 5) -->
+<!--$ addJs('JS_OTHER', 'footer', 6) -->
 ```
 
 These can be rendered exactly where you need them (e.g. at the bottom of the body tag)
 
 ```html
-<!--$ renderJavascripts('footer') -->
+<!--$ renderJs('footer') -->
 ```
 
 Depending on your environment config, these scripts will be rendered as separate script tags or combined into a single, compressed, script.
@@ -26,24 +26,24 @@ Depending on your environment config, these scripts will be rendered as separate
 Idoc Functions
 --------------
 
-### addJavascript(content_id,[ group,[ priority]])
+### addJs(content_id,[ group,[ priority]])
 
 Adds a script to the queue for rendering in the render scripts clause
 - group: a group name for the scripts for later rendering, can be left blank
 - priority: rendering sort order
 
-### renderJavascripts([group])
+### renderJs([group])
 
 Renders the scripts added with addScript(), if the server is set to combine, then the scripts will be rendered with
 one script tag and will use the combiner service. If the server environment is not configured to
 combine scripts each script tag will be rendered individually
 - group: The group to render, leave blank to render ungrouped scripts
 
-### addStyleSheet(content_id,[ group,[ priority]])
+### addCss(content_id,[ group,[ priority]])
 
 Similar to the javascript command
 
-### renderStylesheets([group])
+### renderCss([group])
 
 Similar to the javascript command
 
