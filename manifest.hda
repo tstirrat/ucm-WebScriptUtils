@@ -12,7 +12,7 @@ location
 component
 WebScriptUtils/WebScriptUtils.hda
 componentExtra
-WebScriptUtils/readme.txt
+WebScriptUtils/README.md
 componentLib
 WebScriptUtils/lib/
 @end
