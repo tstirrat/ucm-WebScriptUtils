@@ -33,10 +33,6 @@ type
 location
 parameter
 loadOrder
-extraAfterConfigInit
-org.ucmtwine.Bootstrapper
-webscriptutils.properties
-1000
 @end
 @ResultSet MergeRules
 4
