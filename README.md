@@ -21,7 +21,8 @@ These can be rendered exactly where you need them (e.g. at the bottom of the bod
 <!--$ renderJs('main') -->
 ```
 
-Outputs:
+Depending on your environment config, these scripts will be rendered as separate script tags or combined into a single, compressed, script. This 
+allows a development environment to have expanded scripts, while keeping things compact on your production server.
 
 ```html
 <!-- if WSUCombineScripts and WSUCompressScripts are set to true -->
@@ -31,8 +32,6 @@ Outputs:
 <script type="text/javascript" src="/cs/groups/webassets/documents/webasset/js_main.js"></script>
 <script type="text/javascript" src="/cs/groups/webassets/documents/webasset/js_other.js"></script>
 ```
-
-Depending on your environment config, these scripts will be rendered as separate script tags or combined into a single, compressed, script.
 
 Idoc Functions
 --------------
