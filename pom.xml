@@ -5,11 +5,11 @@
 	<artifactId>WebScriptUtils</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<name>Web Script Utils</name>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -36,6 +36,21 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>lib</directory>
+							<includes>
+								<include>*.jar</include>
+							</includes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
 			</plugin>
 		</plugins>
 		<!-- Used to stop m2e "plugin lifecycle" errors. http://wiki.eclipse.org/M2E_plugin_execution_not_covered#execute_plugin_goal -->
@@ -81,7 +96,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<profiles>
 		<profile>
 			<id>11g</id>
@@ -142,7 +157,7 @@
 			</dependencies>
 		</profile>
 	</profiles>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -159,7 +174,7 @@
 		<dependency>
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
-			<version>v20130227</version>
+			<version>r2079</version>
 		</dependency>
 		<dependency>
 			<groupId>com.yahoo.platform.yui</groupId>
