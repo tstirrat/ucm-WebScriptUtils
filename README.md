@@ -11,14 +11,25 @@ Example
 Anywhere in your template you can define a number of scripts.
 
 ```html
-<!--$ addJs('JS_MAIN', 'footer', 5) -->
-<!--$ addJs('JS_OTHER', 'footer', 6) -->
+<!--$ addJs('/cs/groups/webassets/documents/js_main.js', 'main', 5) -->
+<!--$ addJs(wcmUrl('resource', 'JS_OTHER'), 'main', 6) -->
 ```
 
 These can be rendered exactly where you need them (e.g. at the bottom of the body tag)
 
 ```html
-<!--$ renderJs('footer') -->
+<!--$ renderJs('main') -->
+```
+
+Outputs:
+
+```html
+<!-- if WSUCombineScripts and WSUCompressScripts are set to true -->
+<script type="text/javascript" src="/cs/resources/wsu/main_EDD6137E_c.js" id="wsu-combined-0-group-main"></script>
+
+<!-- otherwise -->
+<script type="text/javascript" src="/cs/groups/webassets/documents/webasset/js_main.js"></script>
+<script type="text/javascript" src="/cs/groups/webassets/documents/webasset/js_other.js"></script>
 ```
 
 Depending on your environment config, these scripts will be rendered as separate script tags or combined into a single, compressed, script.
@@ -26,9 +37,10 @@ Depending on your environment config, these scripts will be rendered as separate
 Idoc Functions
 --------------
 
-### addJs(content_id,[ group,[ priority]])
+### addJs(path,[ group,[ priority]])
 
 Adds a script to the queue for rendering in the render scripts clause
+- path: the absolute web path (use wcmURL() to return this)
 - group: a group name for the scripts for later rendering, can be left blank
 - priority: rendering sort order
 
@@ -39,7 +51,7 @@ one script tag and will use the combiner service. If the server environment is n
 combine scripts each script tag will be rendered individually
 - group: The group to render, leave blank to render ungrouped scripts
 
-### addCss(content_id,[ group,[ priority]])
+### addCss(path,[ group,[ priority]])
 
 Similar to the javascript command
 
@@ -51,7 +63,7 @@ Similar to the javascript command
 
 Render a single tag which uses the combiner to combine scripts (and compress them if the server is set to compress)
 - type: content type "text/javascript" or "text/css"
-- items: comma separated list of items e.g. ITEM_1,ITEM_A
+- items: comma separated list of paths e.g. path1,path2
 - compress: compress result? (if supplied, overrides environment config)
 
 Environment Variables
@@ -77,7 +89,7 @@ The workhorse service which combines, caches and compresses files:
 ### WSU_COMBINE_SCRIPTS
 ##### parameters
 - type: text/javascript or text/css
-- items: The comma separated list of content items e.g. CONTENT_ID1,CONTENT_ID2
+- items: The comma separated list of paths e.g. path1,path2
 - compress: true or false (overrides environment variable)
 - cache: true or false (default true)
 
